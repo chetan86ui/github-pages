@@ -1,42 +1,51 @@
-.App {
-  text-align: center;
-}
-
-body {
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: #333;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-rows: repeat(6, auto);
+  grid-gap: 20px;
+  transition: all 1s;
+  grid-auto-flow: dense;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+
+dt {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.item {
+  background: #eee;
+  border-radius: 6px;
+  color: #333;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
-.App-link {
-  color: #61dafb;
+.pbedge{
+  font-size: 12px;
+  line-height: 16px;
+  padding: 1px 5px 3px 5px;
+  font-weight: bold;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
+  text-shadow: #333 1px 1px 1px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pbedge[data-level="Easy"] {
+  background: #00b894;
+}
+.pbedge[data-level="Medium"] {
+  background: #e17055;
+}
+.pbedge[data-level="Hard"] {
+  background: #d63031;
 }

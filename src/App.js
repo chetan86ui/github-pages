@@ -1,11 +1,11 @@
-import logo from './img/logo.svg';
+import ProblemListing from './components/ProblemListing'
 import './App.css';
+import arrayData  from './data/ArrayData'
 
 function App() {
   return (
-    <div className="App">
-      <h1>My React App</h1>
-      <img src={logo} alt="logo" />
+    <div>
+      <ProblemListing problemprops={arrayData} />
     </div>
   );
 }

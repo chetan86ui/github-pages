@@ -49,6 +49,9 @@ dt {
 .pbedge[data-level="Hard"] {
   background: #d63031;
 }
+.pbedge[data-level="Beginner"] {
+  background: #81ecec;
+}
 
 .item1{ 
   display: flex;
@@ -65,13 +68,13 @@ dt {
 
 .item-id {
   text-align: left;
-  flex: 10em 70em 20em;
+  flex: 1 1 1;
 }
 
 .item-title {
-  flex: 10em 70em 20em;
+  flex: 1 1 1;
   text-align: left;
 }
 .item-bedge {
-  flex: 10em 70em 20em;
+  flex: 1 1 1;
 }

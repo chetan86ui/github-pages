@@ -1,50 +1,39 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 
-const ProblemListing = (props) => {
+const dogs = [{ name: "fido", age: 22 }, { name: "will", age: 50 }];
 
+
+function ProblemListing(props) {
+
+    useEffect(() => {
+        console.log("use effact");
+    });
+    
     
     const [problemsprop, setproblemsprop] = useState(props.problemprops);
-    const compare = (a, b) => {
-        const bandA = a.level.toUpperCase();
-        const bandB = b.level.toUpperCase();
-      
-        let comparison = 0;
-        if (bandA > bandB) {
-          comparison = 1;
-        } else if (bandA < bandB) {
-          comparison = -1;
-        }
-        return comparison;
+    const sortByLevel = () => {
+        const sorted = [...problemsprop].sort((a, b) => {
+          return a.level - b.level;
+        });
+        setproblemsprop(sorted);
+        //alert(sorted[0].name);
       };
-      //problemsprop.sort(compare);
-      const sortArray = () => {
-        const newArr = problemsprop.sort(compare);
-        console.log("newArr",newArr);
-        setproblemsprop(newArr);
-        //problemsprop.sort(compare);
-        
-      };
-    //   const sorted = [...problemsprop].sort((a, b) => {
-    //     return b.level - a.level;
-    //   });
-    //   setproblemsprop(sorted);
-    // <div>
-    //         Sort : <button onClick={ sortArray }>Sort</button>
-    //     </div>
+    const sortArray1 = (item) => {
+        console.log(item);
+    };
     return (
         <>
         <div>
-            Sort : <button onClick={ sortArray }>Sort</button>
+            Sort : <button onClick={ sortByLevel }>Sort</button>
         </div>
         <div className="grid1">
             {
                 problemsprop.map((item,index) => {
                     return (
-        
                         <div className="item1" key={item.id}>
                             <div className="item-id">{index+1}</div>
-                            <div className="item-title">{ item.title }</div>
-                            <div className="item-bedge"><span className="pbedge" data-level={ item.level }>{ item.level }</span></div>
+                            <div className="item-title">{ item.title } <button onClick={ () => sortArray1(item) }>Click</button></div>
+                            <div className="item-bedge"><span className="pbedge" data-level={ item.levelname }>{ item.levelname }</span></div>
                         </div>
                         
                     )
